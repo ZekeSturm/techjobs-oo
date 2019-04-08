@@ -9,6 +9,37 @@
 <div class="container body-content">
 
     <!-- // TODO #2 - display the job fields, one per row -->
+    <!-- <table th:fragment="list-table" class="job-listing">
+        <tr th:each="fieldMethod : ${job.getClass().getMethods()}" th:if="${fieldMethod.getName().contains('get')}">
+            <th th:text="${job.fieldMethod.getClass().getName()}"></th>
+            <td th:text="${job.fieldMethod}"></td>
+        </tr>
+    </table> -->
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <table  th:fragment="single-job" class="job-listing">
+        <tr>
+            <th>Name</th>
+            <td th:text="${job.name}"></td>
+        </tr>
+        <tr>
+            <th>Employer</th>
+            <td th:text="${job.employer.value}"></td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td th:text="${job.location.value}"></td>
+        </tr>
+        <tr>
+            <th>Position Type</th>
+            <td th:text="${job.positionType.value}"></td>
+        </tr>
+        <tr>
+            <th>Skill</th>
+            <td th:text="${job.coreCompetency.value}"></td>
+        </tr>
+    </table>
 
 </div>
 
